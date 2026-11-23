@@ -1,24 +1,74 @@
-# Compiled class file
+# ==========================================
+# ApexPathway Multi-Tier .gitignore
+# ==========================================
+
+# --- Secret Hygiene (Zero Secret Leakage) ---
+.env*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pkcs12
+*.jks
+application-secret.properties
+application-secret.yml
+application-secret.yaml
+
+# --- Local Databases & Data Stores ---
+*.parquet
+*.db
+*.duckdb
+*.sqlite
+*.sqlite3
+pgdata/
+/data/historical/
+
+# --- Java & Maven Build Artifacts ---
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
 *.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
-*.nar
 *.ear
-*.zip
-*.tar.gz
-*.rar
+*.nar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# --- Node & Frontend Build Artifacts ---
+node_modules/
+dist/
+build/
+.npm/
+.eslintcache
+*.tsbuildinfo
+
+# --- Logs & Crash Dumps ---
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 hs_err_pid*
 replay_pid*
+
+# --- Operating System & IDE Caches ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+!.vscode/extensions.json
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# --- Spec Kit Local State ---
+.agents/

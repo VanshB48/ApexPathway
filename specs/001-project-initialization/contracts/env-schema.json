@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ApexPathwayEnvironmentContract",
+  "type": "object",
+  "properties": {
+    "SPRING_PROFILES_ACTIVE": {
+      "type": "string",
+      "enum": ["dev", "test", "prod"],
+      "default": "dev"
+    },
+    "SERVER_PORT": {
+      "type": "integer",
+      "minimum": 1024,
+      "maximum": 65535,
+      "default": 8080
+    },
+    "ANGEL_API_KEY": {
+      "type": "string",
+      "minLength": 8
+    },
+    "ANGEL_CLIENT_CODE": {
+      "type": "string",
+      "pattern": "^[A-Z0-9]+$"
+    },
+    "ANGEL_PIN": {
+      "type": "string",
+      "pattern": "^[0-9]{4,6}$"
+    },
+    "ANGEL_TOTP_SECRET": {
+      "type": "string",
+      "pattern": "^[A-Z2-7=]+$"
+    },
+    "GEMINI_API_KEY": {
+      "type": "string",
+      "pattern": "^AIzaSy[A-Za-z0-9_-]{33}$"
+    },
+    "FINNHUB_API_KEY": {
+      "type": "string",
+      "minLength": 10
+    },
+    "POSTGRES_DB": {
+      "type": "string",
+      "default": "apexpathway"
+    },
+    "POSTGRES_USER": {
+      "type": "string",
+      "default": "apex"
+    },
+    "POSTGRES_PASSWORD": {
+      "type": "string",
+      "minLength": 8
+    },
+    "POSTGRES_HOST": {
+      "type": "string",
+      "default": "localhost"
+    },
+    "POSTGRES_PORT": {
+      "type": "integer",
+      "default": 5432
+    },
+    "MAX_SINGLE_ORDER_VALUE": {
+      "type": "number",
+      "maximum": 100000.0,
+      "default": 50000.0
+    },
+    "MAX_DAILY_TRADES": {
+      "type": "integer",
+      "maximum": 20,
+      "default": 5
+    },
+    "STATIC_IP_WHITELIST": {
+      "type": "string",
+      "default": "127.0.0.1"
+    }
+  },
+  "required": ["POSTGRES_DB", "POSTGRES_USER", "POSTGRES_PASSWORD"]
+}

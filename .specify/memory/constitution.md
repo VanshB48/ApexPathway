@@ -25,6 +25,10 @@
 - Both `backend/` and `frontend/` must maintain clean, reproducible build passes (`mvn clean test`, `npm run build`).
 - Automated tests (JUnit 5 for backend, Vitest/React Testing Library for frontend) must validate core contracts before merge.
 
+### VI. Branch-Per-Issue Isolation (NON-NEGOTIABLE)
+- Every task, feature, or bugfix related to a GitHub issue MUST be developed on its own dedicated git branch named after that issue (e.g. `002-angel-one-auth` or `issue-2-angel-one-auth`).
+- Direct commits to `main` are strictly forbidden. All work for an issue is executed, tested, and committed on its dedicated branch before merging into `main`.
+
 ## Technology Standards & Constraints
 - **Backend**: Java 21 LTS, Spring Boot 3.3.x, Maven, DuckDB JDBC, PostgreSQL 16, LangChain4j (Gemini 2.0 Flash), TA4J, Resilience4j.
 - **Frontend**: Node.js 20+, React 18, Vite 5+, TypeScript 5+, Dockview, TradingView Lightweight Charts v4, Tailwind CSS.
